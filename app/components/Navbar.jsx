@@ -41,7 +41,7 @@ export function Navbar() {
           <Globe className="h-8 w-8 text-[#E0860A] transition-transform group-hover:rotate-12" />
           <div className="flex flex-col">
             <span className="text-2xl font-heading font-bold text-white leading-none tracking-tighter">
-              GEO<span className="text-[#E0860A]">CORE</span>
+              AMIGO<span className="text-[#E0860A]">CORE</span>
             </span>
             <span className="text-[10px] text-slate-400 uppercase tracking-widest leading-none">
               Minerals & Export
