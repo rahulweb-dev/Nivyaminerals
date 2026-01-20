@@ -1,65 +1,369 @@
-import Image from "next/image";
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { SectionHeading } from './components/SectionHeading';
+import { MineralCard } from './components/MineralCard';
+import { minerals } from '../lib/data';
+import {
+  CheckCircle2,
+  Factory,
+  Globe2,
+  Leaf,
+  ShieldCheck,
+  Truck,
+} from 'lucide-react';
+
+import { Card, CardContent } from './components/ui/card';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from './components/ui/accordion';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.js file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className='flex flex-col min-h-screen'>
+      {/* Hero Section */}
+      <section className='relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden'>
+        <div className='absolute inset-0 z-0'>
+          <Image
+            src='/industrial_open-pit_mine_at_sunset.png'
+            alt='Mining Site'
+            fill
+            priority
+            className='object-cover'
+          />
+          <div className='absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/70 to-transparent' />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <div className='container relative z-10 px-4 md:px-6'>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className='max-w-3xl space-y-6'
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <div className='flex items-center gap-3'>
+              <div className='h-[2px] w-12 bg-[#E0860A]' />
+              <span className='text-[#E0860A] font-bold uppercase tracking-widest text-sm'>
+                ISO 9001:2015 Certified
+              </span>
+            </div>
+
+            <h1 className='text-5xl md:text-7xl font-bold text-white uppercase leading-tight'>
+              Trusted Mineral <br />
+              <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#E0860A] to-amber-200'>
+                Mining & Export
+              </span>
+            </h1>
+
+            <p className='text-lg md:text-xl text-slate-300 max-w-xl leading-relaxed'>
+              GeoCore Minerals is a premier supplier of high-grade industrial
+              raw materials. We ensure sustainable extraction and reliable
+              global supply chains.
+            </p>
+
+            <div className='flex flex-wrap gap-4 pt-4'>
+              <Link
+                href='/contact'
+                className='bg-[#E0860A] hover:bg-[#E0860A]/90 text-slate-950 font-bold uppercase tracking-wider text-base h-14 px-8 inline-flex items-center justify-center rounded-md'
+              >
+                Get a Quote
+              </Link>
+
+              <Link
+                href='/minerals'
+                className='border border-white/20 text-white hover:bg-white/10 hover:text-[#E0860A] hover:border-primary font-bold uppercase tracking-wider text-base h-14 px-8 inline-flex items-center justify-center rounded-md'
+              >
+                Explore Minerals
+              </Link>
+            </div>
+          </motion.div>
         </div>
-      </main>
+      </section>
+
+      {/* About Section */}
+      <section className='py-20 '>
+        <div className='container mx-auto px-4 md:px-6'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 items-center'>
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className='relative'
+            >
+              <div className='aspect-[4/3] rounded-lg overflow-hidden border border-slate-800 relative'>
+                <Image
+                  src='https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?auto=format&fit=crop&q=80'
+                  alt='Industrial Mining'
+                  fill
+                  className='object-cover'
+                />
+              </div>
+
+              <div className='absolute -bottom-8 -right-8 bg-slate-900 p-8 rounded border border-slate-800 shadow-xl hidden md:block max-w-xs'>
+                <p className='text-4xl font-bold text-[#E0860A] mb-2'>25+</p>
+                <p className='text-slate-300 uppercase tracking-wider text-sm'>
+                  Years of Excellence in Mineral Extraction
+                </p>
+              </div>
+            </motion.div>
+
+            <div className='space-y-6'>
+              <SectionHeading
+                title='Building the Foundation of Industry'
+                subtitle='Who We Are'
+                align='left'
+                light
+              />
+
+              <p className='text-slate-600 leading-relaxed'>
+                GeoCore Minerals has been at the forefront of the mining
+                industry for over two decades. We specialize in the extraction,
+                processing, and export of high-quality industrial minerals
+                including Iron Ore, Bauxite, Limestone, and Quartz.
+              </p>
+
+              <p className='text-slate-600 leading-relaxed'>
+                Our commitment to sustainability, safety, and quality assurance
+                makes us the preferred partner for steel, cement, and
+                construction industries globally.
+              </p>
+
+              <ul className='space-y-3 pt-4'>
+                {[
+                  'Sustainable Mining Practices',
+                  'Global Export Network',
+                  'Strict Quality Control',
+                  'On-time Delivery',
+                ].map((item, i) => (
+                  <li
+                    key={i}
+                    className='flex items-center gap-3 text-slate-600'
+                  >
+                    <CheckCircle2 className='text-[#E0860A] h-5 w-5' />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+
+              <div className='pt-6'>
+                <Link
+                  href='/about'
+                  className='text-[#E0860A] hover:text-[#E0860A]/80 p-0 font-bold uppercase tracking-widest text-sm'
+                >
+                  Read More About Us →
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Minerals Grid */}
+      <section className='py-20  '>
+        <div className='container  mx-auto px-4 md:px-6'>
+          <SectionHeading
+            title='Minerals We Supply'
+            subtitle='Our Products'
+            light
+          />
+
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12'>
+            {minerals.slice(0, 6).map((mineral) => (
+              <MineralCard key={mineral.id} mineral={mineral} />
+            ))}
+          </div>
+
+          <div className='text-center mt-12'>
+            <Link
+              href='/minerals'
+              className='bg-transparent border border-primary text-[#E0860A] hover:bg-[#E0860A] hover:text-slate-950 uppercase font-bold tracking-wider px-8 h-14 inline-flex items-center justify-center rounded-md'
+            >
+              View All Products
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className='py-20 bg-gray-200'>
+        <div className='container mx-auto px-4 md:px-6'>
+          <SectionHeading
+            title='Why Partner With Us'
+            subtitle='Our Strengths'
+            light
+          />
+
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12'>
+            {[
+              {
+                icon: ShieldCheck,
+                title: 'Quality Assurance',
+                desc: 'Rigorous testing at every stage of processing.',
+              },
+              {
+                icon: Globe2,
+                title: 'Global Logistics',
+                desc: 'Seamless export to over 30 countries worldwide.',
+              },
+              {
+                icon: Leaf,
+                title: 'Sustainable',
+                desc: 'Eco-friendly mining practices and rehabilitation.',
+              },
+              {
+                icon: Truck,
+                title: 'Timely Delivery',
+                desc: 'Robust supply chain ensuring on-time delivery.',
+              },
+            ].map((feature, i) => (
+              <Card
+                key={i}
+                className='bg-slate-900 border-slate-800 text-center hover:border-primary/30 transition-colors'
+              >
+                <CardContent className='pt-8 pb-8 flex flex-col items-center gap-4'>
+                  <div className='h-16 w-16 rounded-full bg-slate-950 border border-slate-800 flex items-center justify-center text-[#E0860A] mb-2'>
+                    <feature.icon className='h-8 w-8' />
+                  </div>
+                  <h3 className='text-xl font-bold text-white'>
+                    {feature.title}
+                  </h3>
+                  <p className='text-slate-400 text-sm'>{feature.desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industries Served */}
+      <section className='py-20 bg-slate-100'>
+        <div className='container mx-auto px-4 md:px-6'>
+          <SectionHeading
+            title='Industries We Serve'
+            subtitle='Applications'
+            light
+          />
+
+          <div className='grid grid-cols-2 md:grid-cols-4 gap-4 mt-8'>
+            {[
+              'Steel Manufacturing',
+              'Cement Production',
+              'Glass Industry',
+              'Construction',
+              'Ceramics',
+              'Foundry',
+              'Chemical Processing',
+              'Infrastructure',
+            ].map((ind, i) => (
+              <div
+                key={i}
+                className='bg-slate-800 p-6 rounded text-center border border-slate-700 hover:border-primary transition-colors group'
+              >
+                <Factory className='h-8 w-8 text-slate-500 mx-auto mb-3 group-hover:text-[#E0860A] transition-colors' />
+                <span className='font-bold text-slate-200 uppercase text-sm tracking-wide'>
+                  {ind}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className='py-20 bg-[#E0860A]/10 border-y border-primary/20'>
+        <div className='container mx-auto px-4 md:px-6'>
+          <SectionHeading
+            title='Client Testimonials'
+            subtitle='What They Say'
+            light
+          />
+
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 max-w-4xl mx-auto'>
+            {[
+              {
+                name: 'John Smith',
+                role: 'Procurement Manager, SteelCorp',
+                quote:
+                  'GeoCore has been our reliable partner for Iron Ore for over 5 years. Their quality consistency is unmatched.',
+              },
+              {
+                name: 'Wei Zhang',
+                role: 'Director, Asian Cement Ltd',
+                quote:
+                  'Excellent logistics and high-purity limestone supply. Highly recommended for international exports.',
+              },
+            ].map((t, i) => (
+              <div
+                key={i}
+                className='bg-slate-950 p-8 rounded border border-slate-800 relative'
+              >
+                <div className='text-[#E0860A] text-4xl font-serif absolute top-4 left-4 opacity-50'>
+                  "
+                </div>
+                <p className='text-slate-300 italic mb-6 relative z-10 pl-4'>
+                  {t.quote}
+                </p>
+                <div className='flex items-center gap-4'>
+                  <div className='h-10 w-10 bg-slate-800 rounded-full flex items-center justify-center font-bold text-slate-400'>
+                    {t.name[0]}
+                  </div>
+                  <div>
+                    <h4 className='text-white font-bold text-sm'>{t.name}</h4>
+                    <p className='text-[#E0860A] text-xs uppercase tracking-wider'>
+                      {t.role}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className='py-20 '>
+        <div className='container mx-auto px-4 md:px-6 max-w-3xl'>
+          <SectionHeading
+            title='Frequently Asked Questions'
+            subtitle='FAQ'
+            light
+          />
+
+          <Accordion type='single' collapsible className='w-full'>
+            {[
+              {
+                q: 'What is your minimum order quantity?',
+                a: 'For most bulk minerals, our MOQ is 500 Metric Tons. However, for high-value minerals like Quartz, we can arrange smaller container loads.',
+              },
+              {
+                q: 'Do you handle export logistics?',
+                a: 'Yes, we provide end-to-end logistics solutions including FOB, CFR, and CIF delivery terms to major global ports.',
+              },
+              {
+                q: 'Can you provide lab test reports?',
+                a: 'Absolutely. Every shipment is accompanied by a Certificate of Analysis (COA) from independent surveyors like SGS or Bureau Veritas.',
+              },
+            ].map((faq, i) => (
+              <AccordionItem
+                key={i}
+                value={`item-${i}`}
+                className='border-slate-800'
+              >
+                <AccordionTrigger className='text-black hover:text-[#E0860A]'>
+                  {faq.q}
+                </AccordionTrigger>
+                <AccordionContent className='text-slate-400'>
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
     </div>
   );
 }
