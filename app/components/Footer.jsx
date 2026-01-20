@@ -11,7 +11,7 @@ export function Footer() {
             <div className="flex items-center gap-2">
               <Globe className="h-6 w-6 text-[#E0860A]" />
               <span className="text-xl font-heading font-bold text-white tracking-tighter">
-                GEO<span className="text-[#E0860A]">CORE</span>
+                AMIGO<span className="text-[#E0860A]">CORE</span>
               </span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">
