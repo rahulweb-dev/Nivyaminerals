@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
@@ -36,18 +36,20 @@ export function Navbar() {
         }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group cursor-pointer">
-          <Globe className="h-8 w-8 text-[#E0860A] transition-transform group-hover:rotate-12" />
-          <div className="flex flex-col">
-            <span className="text-2xl font-heading font-bold text-white leading-none tracking-tighter">
-              AMIGO<span className="text-[#E0860A]">CORE</span>
-            </span>
-            <span className="text-[10px] text-slate-400 uppercase tracking-widest leading-none">
-              Minerals & Export
-            </span>
+          <div className={`relative h-[80px]  transition-all duration-300 ${scrolled ? "w-[150px]" : "w-[180px]"}`}>
+            <Image
+              src="/amigos-log-removebg-preview.png"
+              alt="AMIGO Logo"
+              height={140}
+              width={90}
+              className="object-contain transition-transform duration-300 group-hover:scale-105 -mt-6"
+              priority
+            />
           </div>
         </Link>
+
+
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
@@ -70,7 +72,7 @@ export function Navbar() {
             href="/contact"
             className={`${buttonVariants({ variant: "default" })} bg-[#E0860A] text-slate-950 hover:bg-[#E0860A]/90 font-bold uppercase tracking-wider cursor-pointer`}
           >
-            Get Quote
+           SEE MORE
           </Link>
         </div>
 

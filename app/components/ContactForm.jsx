@@ -46,7 +46,6 @@ export function ContactForm() {
       [e.target.name]: e.target.value,
     }));
 
-    // remove error while typing
     setErrors((prev) => ({
       ...prev,
       [e.target.name]: "",
@@ -73,22 +72,28 @@ export function ContactForm() {
     });
   };
 
+  const inputBase =
+    "mt-2 bg-slate-800/40 border border-slate-600/60 text-white placeholder:text-slate-400 " +
+    "focus:border-[#E0860A] focus:ring-2 focus:ring-[#E0860A]/30 focus:outline-none " +
+    "rounded-md h-12";
+
+  const labelBase =
+    "text-slate-200 font-semibold uppercase tracking-wider text-xs";
+
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-6 bg-slate-900 p-8 rounded-lg border border-slate-800"
+      className="space-y-3 bg-slate-900/60 backdrop-blur-md p-4 rounded-xl border border-slate-700 shadow-xl"
     >
       {/* Name */}
       <div>
-        <label className="text-slate-300 uppercase tracking-wide text-xs">
-          Full Name
-        </label>
+        <label className={labelBase}>Full Name</label>
         <Input
           name="name"
           value={formData.name}
           onChange={handleChange}
           placeholder="John Doe"
-          className="bg-slate-950 border-slate-800 text-white focus:border-primary mt-2"
+          className={inputBase}
         />
         {errors.name && (
           <p className="text-red-400 text-xs mt-2">{errors.name}</p>
@@ -98,15 +103,13 @@ export function ContactForm() {
       {/* Email + Phone */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-          <label className="text-slate-300 uppercase tracking-wide text-xs">
-            Email Address
-          </label>
+          <label className={labelBase}>Email Address</label>
           <Input
             name="email"
             value={formData.email}
             onChange={handleChange}
             placeholder="john@company.com"
-            className="bg-slate-950 border-slate-800 text-white focus:border-primary mt-2"
+            className={inputBase}
           />
           {errors.email && (
             <p className="text-red-400 text-xs mt-2">{errors.email}</p>
@@ -114,15 +117,13 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label className="text-slate-300 uppercase tracking-wide text-xs">
-            Phone Number
-          </label>
+          <label className={labelBase}>Phone Number</label>
           <Input
             name="phone"
             value={formData.phone}
             onChange={handleChange}
             placeholder="9876543210"
-            className="bg-slate-950 border-slate-800 text-white focus:border-primary mt-2"
+            className={inputBase}
           />
           {errors.phone && (
             <p className="text-red-400 text-xs mt-2">{errors.phone}</p>
@@ -132,27 +133,32 @@ export function ContactForm() {
 
       {/* Message */}
       <div>
-        <label className="text-slate-300 uppercase tracking-wide text-xs">
-          Requirement Message
-        </label>
+        <label className={labelBase}>Requirement Message</label>
         <Textarea
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder="I am interested in bulk Iron Ore supply..."
-          className="min-h-[120px] bg-slate-950 border-slate-800 text-white focus:border-primary mt-2"
+          placeholder="I am interested in bulk supply... Please share pricing and delivery timelines."
+          className={`${inputBase} min-h-[140px] h-auto py-3`}
         />
         {errors.message && (
           <p className="text-red-400 text-xs mt-2">{errors.message}</p>
         )}
       </div>
 
-      <Button
-        type="submit"
-        className="w-full bg-[#E0860A] hover:bg-[#E0860A]/90 text-slate-950 font-bold uppercase tracking-wider py-6"
-      >
-        Send Inquiry
-      </Button>
+      <div className="flex justify-end">
+        <Button
+          type="submit"
+          className="bg-[#E0860A] hover:bg-[#E0860A]/90 text-slate-950 font-bold uppercase tracking-wider rounded-md shadow-lg shadow-[#E0860A]/20 px-10 "
+        >
+          Send Inquiry
+        </Button>
+      </div>
+
+
+      <p className="text-xs text-slate-400 text-end">
+        We respect your privacy. Your details will not be shared.
+      </p>
     </form>
   );
 }

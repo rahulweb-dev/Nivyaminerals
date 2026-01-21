@@ -15,10 +15,10 @@ export default function Minerals() {
   const filteredMinerals = filter === "All"
     ? minerals
     : minerals.filter(m => {
-      if (filter === "Ferrous" && (m.name.includes("Iron") || m.name.includes("Manganese"))) return true;
-      if (filter === "Non-Ferrous" && (m.name.includes("Bauxite"))) return true;
+      if (filter === "Ferrous" && (m.name.includes("Iron") )) return true;
+      if (filter === "Non-Ferrous" && (m.name.includes("Dolomite") || m.name.includes("Manganese"))) return true;
       if (filter === "Industrial" && (m.name.includes("Silica") || m.name.includes("Quartz") || m.name.includes("Limestone"))) return true;
-      if (filter === "Construction" && (m.name.includes("Granite") || m.name.includes("Sand"))) return true;
+      if (filter === "Construction" && (m.name.includes("Granite") || m.name.includes("Sand") || m.name.includes("Road metal"))) return true;
       return false;
     });
 

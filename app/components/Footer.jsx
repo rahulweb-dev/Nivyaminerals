@@ -1,6 +1,6 @@
 import { Globe, Mail, MapPin, Phone, Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
 import Link from "next/link";
-
+import Image from "next/image";
 export function Footer() {
   return (
     <footer className="bg-slate-950 text-slate-300 border-t border-slate-900">
@@ -8,12 +8,18 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <Globe className="h-6 w-6 text-[#E0860A]" />
-              <span className="text-xl font-heading font-bold text-white tracking-tighter">
-                AMIGO<span className="text-[#E0860A]">CORE</span>
-              </span>
-            </div>
+            <Link href="/" className="flex items-center gap-2 group cursor-pointer">
+              <div className={`relative h-[80px]  transition-all duration-300 `}>
+                <Image
+                  src="/amigos-log-removebg-preview.png"
+                  alt="AMIGO Logo"
+                  height={140}
+                  width={90}
+                  className="object-contain transition-transform duration-300 group-hover:scale-105 -mt-6"
+                  priority
+                />
+              </div>
+            </Link>
             <p className="text-sm text-slate-400 leading-relaxed">
               Global leader in sustainable mineral extraction and export. Delivering high-grade raw materials to industries worldwide since 1998.
             </p>
@@ -55,16 +61,44 @@ export function Footer() {
             <h3 className="text-white font-heading font-semibold uppercase tracking-wider mb-6">Contact Us</h3>
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-[#E0860A] shrink-0" />
-                <span>123 Industrial Ave, Mining District,<br />Perth, WA 6000, Australia</span>
+                <MapPin className="h-5 w-5 text-[#E0860A] shrink-0 mt-1" />
+                <div className="text-slate-300">
+                  <p className="font-semibold text-white">India Office</p>
+                  <p>G3, Ajit Palace,</p>
+                  <p>Anantapur, A.P - 515001</p>
+                  <a
+                    href="tel:+919908147999"
+                    className="text-sm text-slate-400 mt-1 inline-block hover:text-[#E0860A]"
+                  >
+                    Ph: +91 9908147999
+                  </a>
+
+                </div>
               </li>
-              <li className="flex items-center gap-3">
+
+              <li className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 text-[#E0860A] shrink-0 mt-1" />
+                <div className="text-slate-300">
+                  <p className="font-semibold text-white">US Office</p>
+                  <p>1106 Backbay Dr Irving,</p>
+                  <p>TX - 75063</p>
+                  <a
+                    href="tel:+19729484440"
+                    className="text-sm text-slate-400 mt-1 inline-block hover:text-[#E0860A]"
+                  >
+                    Ph: +1 972 948 4440
+                  </a>
+
+                </div>
+              </li>
+
+              {/* <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-[#E0860A] shrink-0" />
                 <span>+61 (0) 2 9999 8888</span>
-              </li>
+              </li> */}
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-[#E0860A] shrink-0" />
-                <span>export@geocoreminerals.com</span>
+                <span>export@Amigosminerals.com</span>
               </li>
             </ul>
           </div>
@@ -73,7 +107,7 @@ export function Footer() {
 
       <div className="border-t border-slate-900 bg-black/20 py-6">
         <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} GeoCore Minerals. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Amigos Minerals. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-[#E0860A]">Privacy Policy</a>
             <a href="#" className="hover:text-[#E0860A]">Terms & Conditions</a>

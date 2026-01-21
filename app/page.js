@@ -21,68 +21,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from './components/ui/accordion';
+import HeroSwiper from './components/HeroSwiper';
 
 export default function Home() {
   return (
     <div className='flex flex-col min-h-screen'>
-      {/* Hero Section */}
-      <section className='relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden'>
-        <div className='absolute inset-0 z-0'>
-          <Image
-            src='/industrial_open-pit_mine_at_sunset.png'
-            alt='Mining Site'
-            fill
-            priority
-            className='object-cover'
-          />
-          <div className='absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/70 to-transparent' />
-        </div>
-
-        <div className='container relative z-10 px-4 md:px-6'>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className='max-w-3xl space-y-6'
-          >
-            <div className='flex items-center gap-3'>
-              <div className='h-[2px] w-12 bg-[#E0860A]' />
-              <span className='text-[#E0860A] font-bold uppercase tracking-widest text-sm'>
-                ISO 9001:2015 Certified
-              </span>
-            </div>
-
-            <h1 className='text-5xl md:text-7xl font-bold text-white uppercase leading-tight'>
-              Trusted Mineral <br />
-              <span className='text-transparent bg-clip-text bg-gradient-to-r from-[#E0860A] to-amber-200'>
-                Mining & Export
-              </span>
-            </h1>
-
-            <p className='text-lg md:text-xl text-slate-300 max-w-xl leading-relaxed'>
-              GeoCore Minerals is a premier supplier of high-grade industrial
-              raw materials. We ensure sustainable extraction and reliable
-              global supply chains.
-            </p>
-
-            <div className='flex flex-wrap gap-4 pt-4'>
-              <Link
-                href='/contact'
-                className='bg-[#E0860A] hover:bg-[#E0860A]/90 text-slate-950 font-bold uppercase tracking-wider text-base h-14 px-8 inline-flex items-center justify-center rounded-md'
-              >
-                Get a Quote
-              </Link>
-
-              <Link
-                href='/minerals'
-                className='border border-white/20 text-white hover:bg-white/10 hover:text-[#E0860A] hover:border-primary font-bold uppercase tracking-wider text-base h-14 px-8 inline-flex items-center justify-center rounded-md'
-              >
-                Explore Minerals
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSwiper />
 
       {/* About Section */}
       <section className='py-20 '>
@@ -120,8 +64,8 @@ export default function Home() {
               />
 
               <p className='text-slate-600 leading-relaxed'>
-                GeoCore Minerals has been at the forefront of the mining
-                industry for over two decades. We specialize in the extraction,
+                Amigos Minerals has been at the forefront of the mining industry
+                for over two decades. We specialize in the extraction,
                 processing, and export of high-quality industrial minerals
                 including Iron Ore, Bauxite, Limestone, and Quartz.
               </p>
@@ -288,7 +232,7 @@ export default function Home() {
                 name: 'John Smith',
                 role: 'Procurement Manager, SteelCorp',
                 quote:
-                  'GeoCore has been our reliable partner for Iron Ore for over 5 years. Their quality consistency is unmatched.',
+                  'Amigos has been our reliable partner for Iron Ore for over 5 years. Their quality consistency is unmatched.',
               },
               {
                 name: 'Wei Zhang',
