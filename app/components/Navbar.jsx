@@ -68,12 +68,12 @@ export function Navbar() {
             );
           })}
 
-          <Link
+          {/* <Link
             href="/contact"
             className={`${buttonVariants({ variant: "default" })} bg-[#E0860A] text-slate-950 hover:bg-[#E0860A]/90 font-bold uppercase tracking-wider cursor-pointer`}
           >
            SEE MORE
-          </Link>
+          </Link> */}
         </div>
 
         {/* Mobile Toggle */}
