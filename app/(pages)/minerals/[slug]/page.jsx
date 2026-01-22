@@ -2,12 +2,19 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { minerals } from "../../../../lib/data";
 import { ContactForm } from "../../../components/ContactForm";
-import { Table, TableBody, TableCell, TableRow } from "../../../components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableRow,
+} from "../../../components/ui/table";
 import { Button } from "../../../components/ui/button";
 import { Download, CheckCircle, Globe2 } from "lucide-react";
 
-export default function MineralDetail({ params }) {
-  const mineral = minerals.find((m) => m.slug === params.slug);
+export default async function MineralDetail({ params }) {
+  const { slug } = await params; // ✅ important
+
+  const mineral = minerals.find((m) => m.slug === slug);
 
   if (!mineral) {
     notFound();
@@ -41,18 +48,18 @@ export default function MineralDetail({ params }) {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
-            <div className="bg-slate-900 rounded-lg p-8 border border-slate-800 shadow-xl">
-              <h2 className="text-2xl font-heading font-bold text-white mb-4">
+            <div className="bg-white text-black rounded-lg p-8 border border-slate-800 shadow-xl">
+              <h2 className="text-2xl font-heading font-bold  mb-4">
                 Description
               </h2>
 
-              <p className="text-slate-300 leading-relaxed text-lg">
+              <p className="text-black leading-relaxed text-lg">
                 {mineral.description}
               </p>
 
               {/* Specs */}
               <div className="mt-8">
-                <h3 className="text-lg font-heading font-bold text-white mb-4 border-b border-slate-800 pb-2">
+                <h3 className="text-lg font-heading font-bold  mb-4 border-b border-slate-800 pb-2">
                   Technical Specifications
                 </h3>
 
@@ -63,10 +70,10 @@ export default function MineralDetail({ params }) {
                         key={i}
                         className="border-slate-800 hover:bg-slate-800/50"
                       >
-                        <TableCell className="font-bold text-slate-400">
+                        <TableCell className="font-bold text-slate-800">
                           {spec.label}
                         </TableCell>
-                        <TableCell className="text-right text-white font-mono">
+                        <TableCell className="text-right text-slate-800 font-mono">
                           {spec.value}
                         </TableCell>
                       </TableRow>
@@ -78,14 +85,14 @@ export default function MineralDetail({ params }) {
               {/* Applications + Export */}
               <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-lg font-heading font-bold text-white mb-4 border-b border-slate-800 pb-2">
+                  <h3 className="text-lg font-heading font-bold  mb-4 border-b border-slate-800 pb-2">
                     Applications
                   </h3>
                   <ul className="space-y-2">
                     {mineral.applications.map((app, i) => (
                       <li
                         key={i}
-                        className="flex items-center gap-2 text-slate-300"
+                        className="flex items-center gap-2 text-slate-800"
                       >
                         <CheckCircle className="h-4 w-4 text-[#E0860A]" />
                         {app}
@@ -95,14 +102,14 @@ export default function MineralDetail({ params }) {
                 </div>
 
                 <div>
-                  <h3 className="text-lg font-heading font-bold text-white mb-4 border-b border-slate-800 pb-2">
+                  <h3 className="text-lg font-heading font-bold text-black mb-4 border-b border-slate-800 pb-2">
                     Export Markets
                   </h3>
                   <ul className="space-y-2">
                     {mineral.exportCountries.map((c, i) => (
                       <li
                         key={i}
-                        className="flex items-center gap-2 text-slate-300"
+                        className="flex items-center gap-2 text-slate-800"
                       >
                         <Globe2 className="h-4 w-4 text-[#E0860A]" />
                         {c}

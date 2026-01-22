@@ -40,10 +40,10 @@ export default function Home() {
             >
               <div className='aspect-[4/3] rounded-lg overflow-hidden border border-slate-800 relative'>
                 <Image
-                  src='https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?auto=format&fit=crop&q=80'
+                  src='/assests/About_us.jpeg'
                   alt='Industrial Mining'
                   fill
-                  className='object-cover'
+                  className='object-cover md:object-top'
                 />
               </div>
 

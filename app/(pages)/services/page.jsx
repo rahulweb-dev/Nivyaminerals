@@ -49,24 +49,40 @@ export default function Services() {
             return (
               <Card
                 key={service.id}
-                className="bg-slate-900 border-slate-800 hover:border-primary/50 transition-all group"
+                className="relative overflow-hidden bg-slate-900 border-slate-800 hover:border-[#E0860A]/70 transition-all group"
               >
-                <CardHeader>
-                  <div className="h-12 w-12 rounded bg-slate-950 border border-slate-800 flex items-center justify-center text-[#E0860A] mb-4 group-hover:bg-[#E0860A] group-hover:text-slate-950 transition-colors">
-                    {Icon ? <Icon className="h-6 w-6" /> : null}
-                  </div>
+                {/* Background Image */}
+                <div
+                  className="absolute inset-0 bg-cover bg-center scale-100 group-hover:scale-110 transition-transform duration-700"
+                  style={{ backgroundImage: `url(${service.bgImage})` }}
+                />
 
-                  <CardTitle className="text-xl font-heading text-white">
-                    {service.title}
-                  </CardTitle>
-                </CardHeader>
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-black/70 group-hover:bg-black/60 transition-all" />
 
-                <CardContent>
-                  <CardDescription className="text-slate-400 text-base">
-                    {service.description}
-                  </CardDescription>
-                </CardContent>
+                {/* Content */}
+                <div className="relative z-10">
+                  <CardHeader>
+                    <div className="h-12 w-12 rounded bg-white/10 border border-white/10 flex items-center justify-center text-[#E0860A] mb-4 group-hover:bg-[#E0860A] group-hover:text-slate-950 transition-colors">
+                      {Icon ? <Icon className="h-6 w-6" /> : null}
+                    </div>
+
+                    <CardTitle className="text-xl font-heading text-white">
+                      {service.title}
+                    </CardTitle>
+                  </CardHeader>
+
+                  <CardContent>
+                    <CardDescription className="text-slate-200 text-base">
+                      {service.description}
+                    </CardDescription>
+                  </CardContent>
+                </div>
+
+                {/* Bottom Gradient Glow */}
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/70 to-transparent" />
               </Card>
+
             );
           })}
         </div>
@@ -83,23 +99,33 @@ export default function Services() {
             <div className="absolute top-1/2 left-0 right-0 h-1 bg-slate-800 -translate-y-1/2 hidden md:block" />
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
-              {["Exploration", "Extraction", "Processing", "Export"].map(
-                (step, i) => (
-                  <div
-                    key={i}
-                    className="bg-slate-950 p-6 rounded border border-slate-800 text-center flex flex-col items-center gap-4"
-                  >
-                    <div className="h-10 w-10 rounded-full bg-[#E0860A] text-slate-950 font-bold flex items-center justify-center text-lg">
-                      {i + 1}
-                    </div>
-                    <h4 className="font-heading font-bold text-white text-lg">
-                      {step}
-                    </h4>
+              {[
+                { step: "Exploration", bg: "/assests/exporation.png" },
+                { step: "Extraction", bg: "/assests/extarction.png" },
+                { step: "Processing", bg: "/assests/About.png" },
+                { step: "Export", bg: "/assests/Gemini_Generated_Image_1pfb2a1pfb2a1pfb.png" },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="bg-slate-950 p-6 rounded border border-slate-800 text-center flex flex-col items-center gap-4"
+                  style={{
+                    backgroundImage: `url(${item.bg})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                >
+                  <div className="h-10 w-10 backdrop-blur-2xl rounded-full bg-[#E0860A] text-slate-950 font-bold flex items-center justify-center text-lg">
+                    {i + 1}
                   </div>
-                )
-              )}
+
+                  <h4 className="font-heading font-bold  text-white text-lg">
+                    {item.step}
+                  </h4>
+                </div>
+              ))}
             </div>
           </div>
+
         </div>
 
         {/* CTA */}

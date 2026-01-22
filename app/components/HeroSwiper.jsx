@@ -21,11 +21,25 @@ export default function HeroSwiper() {
       desc: "Amigos Minerals is a premier supplier of high-grade industrial raw materials. We ensure sustainable extraction and reliable global supply chains.",
     },
     {
-      image: "/mineral_processing.jpg",
+      image: "/assests/hero-banner-2.jpeg",
       tag: "Global Supply Network",
       title1: "Reliable",
       title2: "Mineral Logistics",
       desc: "From mine to market, we deliver consistent quality and dependable logistics support for essential industries worldwide.",
+    },
+    {
+      image: "/assests/hero-banner-3.jpeg",
+      tag: "Trusted Partnerships",
+      title1: "Quality",
+      title2: "Assured Supply",
+      desc: "We partner with industries across the globe, delivering consistent mineral quality with strict testing, transparency, and long-term reliability.",
+    },
+    {
+      image: "/assests/aemp-product-hero-banner-2021@2x.jpg",
+      tag: "Sustainable Operations",
+      title1: "Future-Ready",
+      title2: "Mining Practices",
+      desc: "Our operations are built around safety, sustainability, and innovation—supporting low-carbon mobility and responsible mineral processing.",
     },
   ];
 

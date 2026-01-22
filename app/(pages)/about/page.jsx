@@ -67,42 +67,70 @@ export default function About() {
               processing in India and worldwide.
             </p>
 
+          
             {/* Vision */}
-            <div className="bg-slate-900 p-6 rounded border border-slate-800 mt-8">
-              <h4 className="text-[#E0860A] font-heading font-bold text-xl mb-4">
-                Vision
-              </h4>
+            <div
+              className="relative overflow-hidden rounded border border-slate-800 mt-8"
+              style={{
+                backgroundImage: "url('/assests/vision.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-black/70"></div>
 
-              <p className="text-sm text-slate-300">
-                To be the leader in sustainable mineral processing by becoming the
-                world’s most trusted partner by ensuring safety, security and
-                value for essential industries.
-              </p>
+              {/* Content */}
+              <div className="relative p-6">
+                <h4 className="text-[#E0860A] font-heading font-bold text-xl mb-4">
+                  Vision
+                </h4>
+
+                <p className="text-sm text-slate-200">
+                  To be the leader in sustainable mineral processing by becoming the
+                  world’s most trusted partner by ensuring safety, security and value for
+                  essential industries.
+                </p>
+              </div>
             </div>
 
             {/* Leadership */}
-            <div className="bg-slate-900 p-6 rounded border border-slate-800">
-              <h4 className="text-[#E0860A] font-heading font-bold text-xl mb-4">
-                Leadership
-              </h4>
+            <div
+              className="relative overflow-hidden rounded border border-slate-800 mt-6"
+              style={{
+                backgroundImage: "url('/assests/mission.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-black/70"></div>
 
-              <p className="text-sm text-slate-300">
-                Our leadership team brings decades of experience in mining,
-                metals, mineral processing, and logistics—driving growth through
-                innovation, safety, and sustainability.
-              </p>
+              {/* Content */}
+              <div className="relative p-6">
+                <h4 className="text-[#E0860A] font-heading font-bold text-xl mb-4">
+                  Leadership
+                </h4>
+
+                <p className="text-sm text-slate-200">
+                  Our leadership team brings decades of experience in mining, metals,
+                  mineral processing, and logistics—driving growth through innovation,
+                  safety, and sustainability.
+                </p>
+              </div>
             </div>
+
           </div>
 
           {/* Right Content */}
           <div className="space-y-8">
             <div className="relative w-full h-[320px] md:h-[360px] rounded-lg overflow-hidden border border-slate-800 shadow-2xl">
               <Image
-                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80"
+                src="/assests/about-us-2.jpeg"
                 alt="Amigos Minerals"
                 fill
-                className="object-cover"
                 priority
+                className="object-cover object-center"
               />
             </div>
 
@@ -189,7 +217,7 @@ export default function About() {
               <div className="flex-1">
                 <div className="relative w-full h-[280px] md:h-[360px] rounded-lg overflow-hidden shadow-xl border border-slate-700">
                   <Image
-                    src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&q=80"
+                    src="/assests/About.png"
                     alt="Sustainability"
                     fill
                     className="object-cover"
