@@ -23,13 +23,13 @@ export function Footer() {
             <p className="text-sm text-slate-400 leading-relaxed">
               Global leader in sustainable mineral extraction and export. Delivering high-grade raw materials to industries worldwide since 1998.
             </p>
-            <div className="flex gap-4 pt-2">
+            {/* <div className="flex gap-4 pt-2">
               {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
                 <a key={i} href="#" className="hover:text-[#E0860A] transition-colors">
                   <Icon className="h-5 w-5" />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
