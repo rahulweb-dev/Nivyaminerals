@@ -2,6 +2,48 @@ import { SectionHeading } from "../../components/SectionHeading";
 import { ContactForm } from "../../components/ContactForm";
 import { Mail, MapPin } from "lucide-react";
 
+export const metadata = {
+  title: "Contact Us | Amigos Minerals",
+  description:
+    "Get in touch with Amigos Minerals for mineral supply, export partnerships, and business enquiries. Contact our India and US offices or send a message through our contact form.",
+  keywords: [
+    "Contact Amigos Minerals",
+    "mineral supply enquiry",
+    "mineral export contact",
+    "mining company contact",
+    "Amigos Minerals India office",
+    "Amigos Minerals US office",
+  ],
+  alternates: {
+    canonical: "https://nivyaminerals.vercel.app/contact",
+  },
+  openGraph: {
+    title: "Contact Us | Amigos Minerals",
+    description:
+      "Contact Amigos Minerals for mineral supply and export partnerships. Offices in India and the United States.",
+    url: "https://nivyaminerals.vercel.app/contact",
+    siteName: "Amigos Minerals",
+    images: [
+      {
+        url: "/assests/about-us-2.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Contact Amigos Minerals",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | Amigos Minerals",
+    description:
+      "Reach Amigos Minerals for enquiries about mineral supply, export partnerships, and support.",
+    images: ["/assests/about-us-2.jpeg"],
+  },
+};
+
+
+
 export default function Contact() {
   return (
     <div className="pt-24 ">

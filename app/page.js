@@ -229,13 +229,13 @@ export default function Home() {
           <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 max-w-4xl mx-auto'>
             {[
               {
-                name: 'John Smith',
+                name: 'Sai kumar',
                 role: 'Procurement Manager, SteelCorp',
                 quote:
                   'Amigos has been our reliable partner for Iron Ore for over 5 years. Their quality consistency is unmatched.',
               },
               {
-                name: 'Wei Zhang',
+                name: 'Amit',
                 role: 'Director, Asian Cement Ltd',
                 quote:
                   'Excellent logistics and high-purity limestone supply. Highly recommended for international exports.',

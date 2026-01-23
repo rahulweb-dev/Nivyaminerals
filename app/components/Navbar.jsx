@@ -39,11 +39,11 @@ export function Navbar() {
         <Link href="/" className="flex items-center gap-2 group cursor-pointer">
           <div className={`relative h-[80px]  transition-all duration-300 ${scrolled ? "w-[150px]" : "w-[180px]"}`}>
             <Image
-              src="/amigos-log-removebg-preview.png"
+              src="/amigo-orange-removebg-preview.png"
               alt="AMIGO Logo"
               height={140}
               width={90}
-              className="object-contain transition-transform duration-300 group-hover:scale-105 -mt-6"
+              className="object-contain transition-transform duration-300 group-hover:scale-105 -mt-3"
               priority
             />
           </div>
