@@ -98,7 +98,7 @@ export function Footer() {
               </li> */}
               <Link href="mailto:info@amigominerals.com"> <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-[#E0860A] shrink-0" />
-                <span>info@amigominerals.com</span>
+                <span>info@amigosminerals.com</span>
               </li></Link>
             </ul>
           </div>
@@ -107,7 +107,7 @@ export function Footer() {
 
       <div className="border-t border-slate-900 bg-black/20 py-6">
         <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
-          <p>© {new Date().getFullYear()} Amigos Minerals. All rights reserved.</p>
+          <p>© 2013 Amigos Minerals. All rights reserved.</p>
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
             <div className="flex gap-6">
               <Link href="/privacy-policy" className="hover:text-[#E0860A]">
@@ -126,8 +126,8 @@ export function Footer() {
             >
               <span>Powered by</span>
               <Image
-                src="/logo-white.svg"
-                alt="Broaddcast"
+                src="/amigo-orange-removebg-preview.png"
+                alt="Amigos"
                 width={90}
                 height={24}
                 className="object-contain"
