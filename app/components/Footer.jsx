@@ -21,7 +21,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Global leader in sustainable mineral extraction and export. Delivering high-grade raw materials to industries worldwide since 1998.
+              Global leader in sustainable mineral extraction and export. Delivering high-grade raw materials to industries worldwide since 2013.
             </p>
             {/* <div className="flex gap-4 pt-2">
               {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
@@ -119,7 +119,7 @@ export function Footer() {
             </div>
 
             <Link
-              href="https://broaddcast.com"
+              href="/#"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 hover:text-[#E0860A] transition"
@@ -128,7 +128,7 @@ export function Footer() {
               <Image
                 src="/amigo-orange-removebg-preview.png"
                 alt="Amigos"
-                width={90}
+                width={50}
                 height={24}
                 className="object-contain"
               />
