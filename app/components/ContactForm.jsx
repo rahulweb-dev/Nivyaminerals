@@ -111,7 +111,7 @@ export function ContactForm() {
           name="name"
           value={formData.name}
           onChange={handleChange}
-          placeholder="John Doe"
+          placeholder="Enter your name"
           className={inputBase}
           disabled={loading}
         />
@@ -126,7 +126,7 @@ export function ContactForm() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="john@company.com"
+            placeholder="Enter your email"
             className={inputBase}
             disabled={loading}
           />
@@ -136,12 +136,12 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label className={labelBase}>number Number</label>
+          <label className={labelBase}>Number</label>
           <Input
             name="number"
             value={formData.number}
             onChange={handleChange}
-            placeholder="9876543210"
+            placeholder="Enter your number"
             className={inputBase}
             disabled={loading}
           />
@@ -172,10 +172,9 @@ export function ContactForm() {
           type="submit"
           disabled={loading}
           className={`px-10 rounded-md font-bold uppercase tracking-wider shadow-lg 
-            ${
-              loading
-                ? "bg-[#E0860A]/60 cursor-not-allowed text-slate-950"
-                : "bg-[#E0860A] hover:bg-[#E0860A]/90 text-slate-950 shadow-[#E0860A]/20"
+            ${loading
+              ? "bg-[#E0860A]/60 cursor-not-allowed text-slate-950"
+              : "bg-[#E0860A] hover:bg-[#E0860A]/90 text-slate-950 shadow-[#E0860A]/20"
             }`}
         >
           {loading ? "Sending..." : "Send Inquiry"}
